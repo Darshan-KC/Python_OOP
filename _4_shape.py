@@ -17,6 +17,20 @@ class Circle(Shape):
     def perimeter(self) ->float:
         return 2*pi*self.radius
     
+class Triangle(Shape):
+    def __init__(self,base,height,side1,side2,side3) -> None:
+        self.base = base
+        self.height = height
+        self.side1 = side1
+        self.side2 = side2
+        self.side3 = side3 
+        
+    def area(self)->float:
+        return 1/2*self.base * self.height
+    
+    def perimeter(self):
+        return self.side1 + self.side2 + self.side3
+    
 
 circle = Circle(7)
 print(f"The perimeter of circle is {circle.perimeter():.3f}")

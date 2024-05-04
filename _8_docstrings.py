@@ -1,0 +1,3 @@
+# Implement a function or class to represent docstring
+
+# In Python, a docstring is a string literal that is used to document a module, class, function, or method. Docstrings are a way to provide a brief description of what the code does, as well as any relevant information about its usage, parameters, return values, and other important details. They are typically placed at the beginning of the code block, immediately after the definition line.

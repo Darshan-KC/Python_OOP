@@ -1,0 +1,1 @@
+# Trying python static function

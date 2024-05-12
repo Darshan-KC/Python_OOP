@@ -1,0 +1,1 @@
+# A class method belongs to class rather than to an instance of the class. One common use case of class method as alternative constructors is when you want to create an object from that is stored in a different format, such as a string or a dictionary.

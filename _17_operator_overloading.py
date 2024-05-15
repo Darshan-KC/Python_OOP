@@ -1,0 +1,1 @@
+# Operator overloading is a feature in python that allow developers to redefine the behavior of mathematical and comparison operators for custom data types. This mean that you can use the standard mathematical operators ( +, -, *, /, etc) and comparision operators ( >, <, ==, etc) in your own classes, just as you would for built-in data types like int, float, and str. 

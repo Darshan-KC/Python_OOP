@@ -6,6 +6,7 @@ import requests
 
 def download_file(url,local_filename):
     if local_filename is None:
+        
         local_filename = url.split('/'[-1])
     
     # Note the stream=True parameter below

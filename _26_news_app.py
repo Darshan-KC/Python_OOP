@@ -5,11 +5,7 @@
 
 import requests
 
-url = "https://newsapi.org/v2/top-headlines"
-
-category = ['business','entertainment','general','health','science','sport','technology']
-
-def user_input(category):
+def user_input(url,category):
     print("Enter your choice of news : ")
     i = 1
     for x in category:
@@ -21,7 +17,37 @@ def user_input(category):
         print("Choice must be of type integer")
         exit()
         
-    
+    match ch:
+        case 1:
+            return url + "?category=business"
+        case 2:
+            return url + "?category=entertainment"
+        case 3:
+            return url + "?category=general"
+        case 4:
+            return url + "?category=health"
+        case 5:
+            return url + "?category=science"
+        case 6:
+            return url + "?category=sport"
+        case 7:
+            return url + "?category=technology"
+        case 8:
+            print("Choice must be between 1 - 8")
+            exit()
 
 if __name__ == "__main__":
-    pass
+    
+    API_KEY = ""
+    
+    url = "https://newsapi.org/v2/top-headlines"
+
+    category = ['business','entertainment','general','health','science','sport','technology']
+    
+    f_url = user_input(url,category)
+    
+    f_url = f_url + f"&apiKey={API_KEY}"
+    
+    response = requests.get(f_url)
+    print(response.text)
+    

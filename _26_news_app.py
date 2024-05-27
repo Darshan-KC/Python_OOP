@@ -5,4 +5,23 @@
 
 import requests
 
-url = "https://newsapi.org/"
+url = "https://newsapi.org/v2/top-headlines"
+
+category = ['business','entertainment','general','health','science','sport','technology']
+
+def user_input(category):
+    print("Enter your choice of news : ")
+    i = 1
+    for x in category:
+        print(f"{i}. {x}")
+        i = i + 1
+    try:
+        ch = int(input("Enter your choice: "))
+    except:
+        print("Choice must be of type integer")
+        exit()
+        
+    
+
+if __name__ == "__main__":
+    pass

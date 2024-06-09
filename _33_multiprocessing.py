@@ -5,3 +5,13 @@
 # We can use multiprocessing by importing the multiprocessing module.
 
 #import multiprocessing
+
+import multiprocessing
+import requests
+
+def downloadFile(url,name):
+    response = requests.get(url)
+    open(f"file{name}.jpg","wb").write(response.content)
+
+url = "https://www.pexels.com/photo/white-daisy-on-grass-field-409696/"
+downloadFile(url,1)

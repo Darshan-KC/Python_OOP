@@ -11,7 +11,13 @@ import requests
 
 def downloadFile(url,name):
     response = requests.get(url)
-    open(f"file{name}.jpg","wb").write(response.content)
+    lst = str(url).split(".")
+    try:
+        extension = lst[-1]
+    except:
+        print("Not a vaild url")
+        exit()
+    open(f"file{name}.{extension}","wb").write(response.content)
 
-url = "https://www.pexels.com/photo/white-daisy-on-grass-field-409696/"
-downloadFile(url,1)
+url = "https://cdn.hashnode.com/res/hashnode/image/upload/v1675269151012/77660837-f802-40e4-90e7-381e344ada3c.png"
+downloadFile(url,"gitVsGithub")

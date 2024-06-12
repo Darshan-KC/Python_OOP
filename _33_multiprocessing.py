@@ -21,14 +21,15 @@ def downloadFile(url,name):
     open(f"files/file{name}.{extension}","wb").write(response.content)
     print(f"Complete downloading file image{name}")
     
-urls = ['https://images.pexels.com/photos/85683/sheep-flock-of-sheep-series-standing-on-85683.jpeg','https://cdn.hashnode.com/res/hashnode/image/upload/v1675269151012/77660837-f802-40e4-90e7-381e344ada3c.png','https://images.pexels.com/photos/59321/pexels-photo-59321.jpeg','https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg']
+if __name__ == "__main__":
+    urls = ['https://images.pexels.com/photos/85683/sheep-flock-of-sheep-series-standing-on-85683.jpeg','https://cdn.hashnode.com/res/hashnode/image/upload/v1675269151012/77660837-f802-40e4-90e7-381e344ada3c.png','https://images.pexels.com/photos/59321/pexels-photo-59321.jpeg','https://images.pexels.com/photos/259280/pexels-photo-259280.jpeg']
 
-temp = []
-for i,x in enumerate(urls):
-    # downloadFile(x,f"-{i+1}")
-    p = multiprocessing.Process(target=downloadFile,args=[x,f"-{i+1}"])
-    p.start()
-    temp.append(p)
+    temp = []
+    for i,x in enumerate(urls):
+        # downloadFile(x,f"-{i+1}")
+        p = multiprocessing.Process(target=downloadFile,args=[x,f"-{i+1}"])
+        p.start()
+        temp.append(p)
 
-for a in temp:
-    a.join()
+    for a in temp:
+        a.join()
